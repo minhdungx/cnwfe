@@ -1,7 +1,9 @@
 * {
     box-sizing: border-box;
 }
-
+html {
+    overflow: hidden;
+}
 .page-content {
     margin: 64px 98px;
 }
