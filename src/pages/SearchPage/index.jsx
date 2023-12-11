@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import { Col, Row, Button } from "antd";
 import NavigationBar from "../../components/NavigationBar";
@@ -11,7 +11,7 @@ const initState = {
     dateCreated: 'abc',
     courseTitle: 'nodejs',
     categoryId: 0,
-    courseId : 1
+    courseId : 2
 
 }
 

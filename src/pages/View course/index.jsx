@@ -11,7 +11,7 @@ import ReactPlayer from "react-player";
 
 export default function ViewCourse() {
     const { courseId } = useParams()
-    const { courseInfo, setCourseInfo } = useState({})
+    const  [courseInfo, setCourseInfo]  = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,8 +30,7 @@ export default function ViewCourse() {
         fetchData()
 
 
-    }, [courseId])
-
+    }, [])
     const sections = [
         {
             sectionTitle: 'section title 1',
@@ -280,10 +279,9 @@ export default function ViewCourse() {
         
     ]
 
-
-    const [curLecture, setCurLecture] = useState(sections[0].lectureStudentDTOList[0].sectionTitle)
-    const [curUrl, setCurUrl] = useState(sections[0].lectureStudentDTOList[0].mainContent.contentUrl)
-    const [curDes, setCurDes] = useState(sections[0].lectureStudentDTOList[0].lectureDescription)
+    const [curLecture, setCurLecture] = useState(courseInfo[0]?.lectureStudentDTOList[0].sectionTitle)
+    const [curUrl, setCurUrl] = useState(courseInfo[0]?.lectureStudentDTOList[0].mainContent?.contentUrl)
+    const [curDes, setCurDes] = useState(courseInfo[0]?.lectureStudentDTOList[0].lectureDescription)
     const handleClick = (title, url, des) => {
         setCurLecture(title)
         setCurUrl(url)
@@ -367,14 +365,16 @@ export default function ViewCourse() {
 
                     <ul className="section-ul">
                         {
-                            sections?.map((sectionItem) => (
-                                <li className="section-li">
+                            sections?.map((sectionItem, index) => (
+                                <li key = {index} className="section-li">
                                     <h2>{sectionItem.sectionTitle}</h2>
                                     <ul className="lecture-ul">
                                         {
 
-                                            sectionItem.lectureStudentDTOList.map((lecture) => (
-                                                <li className="lecture-li"
+                                            sectionItem.lectureStudentDTOList.map((lecture,index) => (
+                                                <li 
+                                                    key={index}
+                                                    className="lecture-li"
                                                     cursor="pointer"
                                                     onClick={() => handleClick(lecture.lectureTitle, lecture.mainContent.contentUrl, lecture.lectureDescription)}
                                                     style={{ backgroundColor: lecture.lectureTitle === curLecture ? "rgb(209, 215, 220)" : "" }}
