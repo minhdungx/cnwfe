@@ -44,7 +44,7 @@ function App() {
           element={<SearchPage />}
         />
         <Route
-          path="/course/view"
+          path="/course/view/:courseId"
           element={<ViewCourse />}
         />
       </Routes>

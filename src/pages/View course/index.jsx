@@ -11,11 +11,18 @@ import ReactPlayer from "react-player";
 
 export default function ViewCourse() {
     const { courseId } = useParams()
-    const { courseInfo, setCourseInfo } = useState([])
+    const { courseInfo, setCourseInfo } = useState({})
 
     useEffect(() => {
         const fetchData = async () => {
-            // // const reponse = await axios.get(`${baseUrl}/api/public/course`)
+            try {
+
+                const reponse = await axios.get(`${baseUrl}/api/public/course/${courseId}/subscribe-curriculum-item`)
+                setCourseInfo(reponse.data)
+            } catch (err) {
+                console.log('loi');
+            }
+
             // const responses = await axios.get('http://localhost:8080/api/public/course')
             //     .then((response) => setCourseInfo(response.data.content));
 
@@ -107,6 +114,170 @@ export default function ViewCourse() {
 
             ]
         },
+        {
+            sectionTitle: 'section title 3',
+            lectureStudentDTOList: [
+                {
+                    lectureTitle: "lecture title 7",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+                {
+                    lectureTitle: "lecture title 8",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+                {
+                    lectureTitle: "lecture title 9",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+
+            ]
+        },
+        {
+            sectionTitle: 'section title 3',
+            lectureStudentDTOList: [
+                {
+                    lectureTitle: "lecture title 7",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+                {
+                    lectureTitle: "lecture title 8",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+                {
+                    lectureTitle: "lecture title 9",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+
+            ]
+        },
+        {
+            sectionTitle: 'section title 3',
+            lectureStudentDTOList: [
+                {
+                    lectureTitle: "lecture title 7",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+                {
+                    lectureTitle: "lecture title 8",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+                {
+                    lectureTitle: "lecture title 9",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+
+            ]
+        },
+        {
+            sectionTitle: 'section title 3',
+            lectureStudentDTOList: [
+                {
+                    lectureTitle: "lecture title 7",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+                {
+                    lectureTitle: "lecture title 8",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+                {
+                    lectureTitle: "lecture title 9",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+
+            ]
+        },
+        {
+            sectionTitle: 'section title 3',
+            lectureStudentDTOList: [
+                {
+                    lectureTitle: "lecture title 7",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+                {
+                    lectureTitle: "lecture title 8",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+                {
+                    lectureTitle: "lecture title 9",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+
+            ]
+        },
+        {
+            sectionTitle: 'section title 3',
+            lectureStudentDTOList: [
+                {
+                    lectureTitle: "lecture title 7",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+                {
+                    lectureTitle: "lecture title 8",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+                {
+                    lectureTitle: "lecture title 9",
+                    lectureDescription: "lecture description",
+                    mainContent: {
+                        contentUrl: "https://www.youtube.com/watch?v=iu-LBY7NXD4"
+                    }
+                },
+
+            ]
+        },
+
+        
     ]
 
 
@@ -132,7 +303,10 @@ export default function ViewCourse() {
 
     return (
         <div className="view-course-page">
+            <div className="heading">
+
             <NavigationBar />
+            </div>
 
             {/* <div className="wrapper">
                 <div className="video-container">
@@ -175,10 +349,13 @@ export default function ViewCourse() {
             </div> */}
 
             <Row className="page-content">
-                <Col span={18} className="video-col">
+                <Col span={16} className="video-col">
                     <ReactPlayer className="lecture-video"
                         url={curUrl}
                         controls={true}
+                        width={'100%'}
+                        height={'100%'}
+                        style={{objectFit : 'cover'}}
                     >
                     </ReactPlayer>
                     <h1>{curLecture}</h1>
@@ -186,7 +363,7 @@ export default function ViewCourse() {
 
                 </Col>
 
-                <Col span={6} className="nav-col">
+                <Col span={8} className="nav-col">
 
                     <ul className="section-ul">
                         {
